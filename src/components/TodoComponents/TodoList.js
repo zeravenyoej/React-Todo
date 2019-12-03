@@ -12,7 +12,7 @@ const TodoList = (props) => {
     return (
         props.things.map(thing=>(
             <TodoCard
-                // key={thing.id}    
+                key={thing.id}    
                 thing={thing}
                 toggleCompleted={props.toggleCompleted}
             />

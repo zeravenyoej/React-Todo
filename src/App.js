@@ -30,7 +30,6 @@ class App extends React.Component {
   };
 
   toggleCompleted = itemId => {
-    console.log(`toggleCompleted: `, itemId);
     this.setState({
       things: this.state.things.map(item => {
         if(item.id===itemId) {
@@ -43,12 +42,26 @@ class App extends React.Component {
     })
   };
 
+  addItem = itemName => {
+    console.log('add item: ', itemName)
+    this.setState({
+      things: [
+        ...this.state.things, 
+        {
+          name: itemName, 
+          id: Date.now(),
+          completed: false
+        },
+      ]
+    })
+  };
 
   render() {
     return (
       <div>
         <h1>To Do List</h1>
-        <TodoForm/>
+        <TodoForm
+          addItem={this.addItem}/>
         <TodoList 
           things={this.state.things}
           toggleCompleted={this.toggleCompleted}/>
