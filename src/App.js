@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css'
 
 const data =[
   {
@@ -25,8 +26,22 @@ class App extends React.Component {
     this.state = {
       things: data
     };
+    this.toggleCompleted=this.toggleCompleted.bind(this);
   };
 
+  toggleCompleted = itemId => {
+    console.log(`toggleCompleted: `, itemId);
+    this.setState({
+      things: this.state.things.map(item => {
+        if(item.id===itemId) {
+          return {
+            ...item,
+            completed: !item.completed
+          }}
+        return item;
+        })
+    })
+  };
 
 
   render() {
@@ -34,7 +49,9 @@ class App extends React.Component {
       <div>
         <h1>To Do List</h1>
         <TodoForm/>
-        <TodoList things={this.state.things}/>
+        <TodoList 
+          things={this.state.things}
+          toggleCompleted={this.toggleCompleted}/>
       </div>
     );
   }

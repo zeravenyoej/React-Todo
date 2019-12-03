@@ -4,16 +4,17 @@
 for each element in the array.*/
 
 import React from 'react';
-import TodoItem from './Todo';
+import TodoCard from './Todo';
 
 
 const TodoList = (props) => {
 
     return (
         props.things.map(thing=>(
-            <TodoItem
-                key={thing.id}    
+            <TodoCard
+                // key={thing.id}    
                 thing={thing}
+                toggleCompleted={props.toggleCompleted}
             />
         ))
     )

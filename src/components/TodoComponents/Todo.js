@@ -1,11 +1,19 @@
 //- `<Todo />` is a component that takes in the `todo` data and displays the task to the screen.
 import React from 'react';
 
-const TodoItem = (props) => (
-    <div>
-        <p>{props.thing.task}</p>
-    </div>
-);
+const TodoCard = (props) => {
+
+    const handleClick = event => {
+        event.preventDefault();
+        props.toggleCompleted(props.thing.id);
+    }
+
+    return (
+        <div onClick={handleClick} className={`item${props.thing.completed ? ' completed' : ''}`}>
+            <p>{props.thing.task}</p>
+        </div>
+    );
+    };
 
 
-export default TodoItem; 
+export default TodoCard; 
