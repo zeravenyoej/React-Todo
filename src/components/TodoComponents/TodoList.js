@@ -4,10 +4,19 @@
 for each element in the array.*/
 
 import React from 'react';
-import data from './Todo';
+import TodoItem from './Todo';
 
-const TodoList = () => (
-    <div>hi</div>
-);
+
+const TodoList = (props) => {
+
+    return (
+        props.things.map(thing=>(
+            <TodoItem
+                key={thing.id}    
+                thing={thing}
+            />
+        ))
+    )
+};
 
 export default TodoList;
