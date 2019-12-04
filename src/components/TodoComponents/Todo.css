@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Permanent Marker', cursive; 
 }
 .mainDiv {
     margin-top: 30%;
