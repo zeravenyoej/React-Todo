@@ -1,3 +1,35 @@
+body {
+    background: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Permanent Marker', cursive;
+}
+.mainDiv {
+    margin-top: 30%;
+    width: 100%;
+    background: rgb(245, 228, 228);
+    padding: 20%;
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+    
+}
+
 .item.completed {
     text-decoration: line-through;
+}
+
+h1 {
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 2rem;
+}
+
+input, button {
+    box-shadow: 1px 1px black;
+    font-size: 1.2rem;
+    background: rgba(222, 207, 226, 0.993);
 }
