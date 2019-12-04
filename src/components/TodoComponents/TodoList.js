@@ -8,7 +8,6 @@ import TodoCard from './Todo';
 
 
 const TodoList = (props) => {
-    console.log(props)
     return (
         <div>
             {props.things.map(thing=>{

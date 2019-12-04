@@ -2,8 +2,6 @@
 import React from 'react';
 
 const TodoCard = (props) => {
-    console.log('todoComp: ', props)
-
     const handleClick = event => {
         event.preventDefault();
         props.toggleCompleted(props.thing.id);

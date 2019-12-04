@@ -24,6 +24,11 @@ class TodoForm extends React.Component {
         })
     }};
 
+    // handleDelete = e => {
+    //     e.preventDefault();
+    //     this.props.deleteCompleted(this.state.itemName)
+    // }
+
     render(){
         console.log('render form')
         return(
@@ -39,7 +44,7 @@ class TodoForm extends React.Component {
                     <button>Add Todo</button>
                 </form>
 
-                <button>Clear Completed</button>
+                <button onClick={this.props.deleteCompleted}>Clear Completed</button>
             </div>
             )}
 };

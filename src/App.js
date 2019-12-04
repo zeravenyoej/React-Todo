@@ -56,12 +56,21 @@ class App extends React.Component {
     })
   };
 
+  deleteCompleted = itemName => {
+    this.setState({
+      things: this.state.things.filter(thing => {
+        return !thing.completed
+      })
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>To Do List</h1>
         <TodoForm
-          addItem={this.addItem}/>
+          addItem={this.addItem}
+          deleteCompleted={this.deleteCompleted}/>
         <TodoList 
           things={this.state.things}
           toggleCompleted={this.toggleCompleted}/>
