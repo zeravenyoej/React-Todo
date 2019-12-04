@@ -8,15 +8,17 @@ import TodoCard from './Todo';
 
 
 const TodoList = (props) => {
-
+    console.log(props)
     return (
-        props.things.map(thing=>(
-            <TodoCard
+        <div>
+            {props.things.map(thing=>{
+                return <TodoCard
                 key={thing.id}    
                 thing={thing}
                 toggleCompleted={props.toggleCompleted}
-            />
-        ))
+                />
+            })}
+        </div>
     )
 };
 

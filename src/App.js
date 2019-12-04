@@ -48,7 +48,7 @@ class App extends React.Component {
       things: [
         ...this.state.things, 
         {
-          name: itemName, 
+          task: itemName, 
           id: Date.now(),
           completed: false
         },
